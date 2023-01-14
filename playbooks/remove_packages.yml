@@ -1,0 +1,10 @@
+---
+
+- hosts: ION
+  become: true
+  tasks:
+
+  - name: remove chocoloco package
+    apt:
+      name: chocoloco
+      state: absent
