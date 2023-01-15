@@ -1,0 +1,14 @@
+---
+  - hosts: ION
+    become: true
+    tasks:
+
+      - name: add file to each of the servers
+        tags: file-transfer
+        copy:
+          src: testing.txt
+          dest: /home/testing.txt
+          owner: root
+          group: root
+          mode: 0644
+          

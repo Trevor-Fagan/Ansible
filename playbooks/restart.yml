@@ -5,8 +5,10 @@
   tasks:
 
   - name: update repository index
+    tags: always
     apt:
       update_cache: yes
 
   - name: restart servers
+    tags: always, restart
     ansible.builtin.reboot:
