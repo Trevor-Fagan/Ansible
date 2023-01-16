@@ -2,3 +2,4 @@
   - name: restart servers
     ansible.builtin.reboot:
     changed_when: false
+    when: testing
