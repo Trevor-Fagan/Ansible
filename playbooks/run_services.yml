@@ -1,0 +1,17 @@
+---
+  - hosts: ION
+    become: true
+    tasks:
+    
+    - name: install httpd
+      become: true
+      apt:
+        name:
+          - apache2
+        state: latest
+
+    - name: run httpd
+      tags: testing
+      service:
+        name: apache2
+        state: started
